@@ -10,17 +10,21 @@ import org.testng.annotations.Test;
 
 public class PbngocTest extends BaseTest {
     @BeforeClass
-    public void init(){
+    public void init() throws InterruptedException {
         // chạy trước
         var driver =  getDriver();
+        driver.navigate().to("https://www.lazada.vn/");
+        Thread.sleep(1000);
         homePage = new HomePage(driver);
     }
     HomePage homePage;
 
     @Test(priority = 1)
     public void test1(){
-        getDriver().navigate().to("https://shopee.vn/");
-        homePage.sleep(4);
+        homePage.gotoDashboard();
+        homePage.sleep(2);
+        homePage.changeLanguae("vi");
+        homePage.searchItem("áo khoác");
     }
 
 

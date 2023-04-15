@@ -1,14 +1,17 @@
-package com.shopee.pages;
+package org.example;
 
-import org.example.WebUI;
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
-public class BasePage  {
-    protected WebDriver webDriver;
-    public BasePage(WebDriver driver){
-        webDriver = driver;
-    }
+import java.net.URL;
+import java.sql.Driver;
+import java.sql.DriverManager;
+
+public class WebUI {
+
+    WebDriver webDriver;
 
 
     /**
@@ -19,6 +22,5 @@ public class BasePage  {
         element = (WebElement) object;
         element.click();
     }
-
-
 }
+
